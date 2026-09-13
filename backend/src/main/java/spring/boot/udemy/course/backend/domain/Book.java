@@ -7,10 +7,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
-import java.util.Objects;
+import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 public class Book {
 
@@ -18,16 +18,29 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    private String isbn;
 
-    @ManyToMany()
-    @JoinTable(name = "author_books", joinColumns = @JoinColumn(name="book_id"), inverseJoinColumns = @JoinColumn(name="author_id"))
-    private Set<Author> authors;
+    @ManyToMany
+    @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+    private Set<Author> authors = new HashSet<>();
+
+    @ManyToOne
+    private Publisher publisher;
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
     public Set<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Set<Author> authors){
+    public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
 
@@ -47,16 +60,36 @@ public class Book {
         this.title = title;
     }
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", authors=" + authors +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
 
         Book book = (Book) o;
-        return Objects.equals(id, book.id);
+
+        return getId() != null ? getId().equals(book.getId()) : book.getId() == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return getId() != null ? getId().hashCode() : 0;
     }
 }
