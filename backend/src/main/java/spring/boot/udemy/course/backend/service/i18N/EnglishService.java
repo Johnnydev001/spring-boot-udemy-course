@@ -1,13 +1,14 @@
-package spring.boot.udemy.course.backend.service;
+package spring.boot.udemy.course.backend.service.i18N;
+
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("ES")
+@Profile({ "EN", "default" })
 @Service("i18nService")
-public class SpanishService implements i18nService {
+public class EnglishService implements i18NService {
 
     @Override
     public String sayHello() {
-        return "Hola";
+        return "Hello";
     }
 }

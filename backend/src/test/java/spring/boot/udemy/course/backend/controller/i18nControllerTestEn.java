@@ -3,6 +3,9 @@ package spring.boot.udemy.course.backend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+
+import spring.boot.udemy.course.backend.controller.i18N.i18nController;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
