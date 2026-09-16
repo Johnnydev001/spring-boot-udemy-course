@@ -1,9 +1,11 @@
 package spring.boot.udemy.course.backend.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import spring.boot.udemy.course.backend.domain.Book;
 import spring.boot.udemy.course.backend.repository.BookRepository;
 
+@Primary
 @Service
 public class BookServiceImpl implements BookService {
 
