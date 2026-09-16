@@ -1,13 +1,14 @@
-package spring.boot.udemy.course.backend.controller;
+package spring.boot.udemy.course.backend.controller.book;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import spring.boot.udemy.course.backend.domain.Book;
-import spring.boot.udemy.course.backend.service.BookService;
-import spring.boot.udemy.course.backend.service.BookServiceNoDI;
-import spring.boot.udemy.course.backend.service.BookServiceNoDIImpl;
+
+import spring.boot.udemy.course.backend.domain.book.Book;
+import spring.boot.udemy.course.backend.service.book.BookService;
+import spring.boot.udemy.course.backend.service.book.BookServiceNoDI;
+import spring.boot.udemy.course.backend.service.book.BookServiceNoDIImpl;
 
 @Controller
 public class BookController {

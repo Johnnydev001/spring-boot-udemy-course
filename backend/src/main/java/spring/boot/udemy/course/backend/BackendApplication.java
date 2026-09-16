@@ -3,7 +3,8 @@ package spring.boot.udemy.course.backend;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import spring.boot.udemy.course.backend.controller.BookController;
+
+import spring.boot.udemy.course.backend.controller.book.BookController;
 
 @SpringBootApplication
 public class BackendApplication {

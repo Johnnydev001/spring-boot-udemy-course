@@ -1,10 +1,12 @@
-package spring.boot.udemy.course.backend.controller;
+package spring.boot.udemy.course.backend.controller.beer;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import spring.boot.udemy.course.backend.controller.beer.BeerController;
 
 @SpringBootTest 
 public class BeerControlerTest {

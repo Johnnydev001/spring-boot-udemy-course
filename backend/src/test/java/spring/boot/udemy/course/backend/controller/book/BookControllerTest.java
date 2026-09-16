@@ -1,8 +1,10 @@
-package spring.boot.udemy.course.backend.controller;
+package spring.boot.udemy.course.backend.controller.book;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import spring.boot.udemy.course.backend.controller.book.BookController;
 
 @SpringBootTest
 class BookControllerTest {

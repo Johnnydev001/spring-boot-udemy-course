@@ -1,9 +1,10 @@
-package spring.boot.udemy.course.backend.service;
+package spring.boot.udemy.course.backend.service.book;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import spring.boot.udemy.course.backend.domain.Book;
-import spring.boot.udemy.course.backend.repository.BookRepository;
+
+import spring.boot.udemy.course.backend.domain.book.Book;
+import spring.boot.udemy.course.backend.repository.book.BookRepository;
 
 @Primary
 @Service

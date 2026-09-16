@@ -1,4 +1,4 @@
-package spring.boot.udemy.course.backend.controller;
+package spring.boot.udemy.course.backend.controller.i18n;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,17 +9,17 @@ import spring.boot.udemy.course.backend.controller.i18N.i18nController;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ActiveProfiles("ES")
-@SpringBootTest 
-public class i18nControllerTestEs {
-    
-    @Autowired 
+@ActiveProfiles("EN")
+@SpringBootTest
+public class i18nControllerTestEn {
+
+    @Autowired
     private i18nController i18nController;
 
     @Test
     void sayHello() {
         String response = i18nController.sayHello();
-        assertEquals("Hola", response);
+        assertEquals("Hello", response);
     }
 
 }

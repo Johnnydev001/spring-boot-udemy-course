@@ -1,4 +1,4 @@
-package spring.boot.udemy.course.backend.domain;
+package spring.boot.udemy.course.backend.domain.book;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

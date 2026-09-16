@@ -1,4 +1,4 @@
-package spring.boot.udemy.course.backend.service;
+package spring.boot.udemy.course.backend.service.book;
 
 public class BookServiceNoDIImpl implements BookServiceNoDI {
     @Override

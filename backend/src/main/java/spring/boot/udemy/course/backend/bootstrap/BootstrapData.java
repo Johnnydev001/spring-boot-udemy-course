@@ -1,11 +1,12 @@
 package spring.boot.udemy.course.backend.bootstrap;
 
-import spring.boot.udemy.course.backend.domain.Author;
-import spring.boot.udemy.course.backend.domain.Book;
-import spring.boot.udemy.course.backend.domain.Publisher;
-import spring.boot.udemy.course.backend.repository.AuthorRepository;
-import spring.boot.udemy.course.backend.repository.BookRepository;
-import spring.boot.udemy.course.backend.repository.PublisherRepository;
+import spring.boot.udemy.course.backend.domain.book.Author;
+import spring.boot.udemy.course.backend.domain.book.Book;
+import spring.boot.udemy.course.backend.domain.book.Publisher;
+import spring.boot.udemy.course.backend.repository.book.AuthorRepository;
+import spring.boot.udemy.course.backend.repository.book.BookRepository;
+import spring.boot.udemy.course.backend.repository.book.PublisherRepository;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

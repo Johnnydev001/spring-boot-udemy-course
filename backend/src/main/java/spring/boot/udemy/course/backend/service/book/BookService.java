@@ -1,6 +1,6 @@
-package spring.boot.udemy.course.backend.service;
+package spring.boot.udemy.course.backend.service.book;
 
-import spring.boot.udemy.course.backend.domain.Book;
+import spring.boot.udemy.course.backend.domain.book.Book;
 
 public interface BookService {
 
