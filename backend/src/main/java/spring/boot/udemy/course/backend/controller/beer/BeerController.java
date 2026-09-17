@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 import spring.boot.udemy.course.backend.domain.beer.Beer;
+import spring.boot.udemy.course.backend.exception.NotFoundException;
 import spring.boot.udemy.course.backend.service.beer.BeerService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
@@ -33,9 +35,11 @@ public class BeerController {
     public Beer getBeerById(@PathVariable("id") UUID id) {
 
         log.debug("Get Beer by Id - in controller");
+
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "api/v1/beers/" + id.toString());
-        return ResponseEntity.status(HttpStatus.OK).headers(headers).body(beerService.getBeerById(id)).getBody();
+
+        return beerService.getBeerById(id).orElseThrow(NotFoundException::new);
     }
 
     @RequestMapping(method = RequestMethod.POST)

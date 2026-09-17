@@ -2,6 +2,8 @@ package spring.boot.udemy.course.backend.controller.beer;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,7 +40,7 @@ public class BeerControlerTest {
         UUID testId = UUID.randomUUID();
         Beer testBeer = beerServiceImpl.listBeers().get(0);
 
-        given(beerService.getBeerById(testId)).willReturn(testBeer);
+        given(beerService.getBeerById(testId)).willReturn(Optional.of(testBeer));
 
         mockMvc.perform(get("/api/v1/beers/" + testId)
                         .accept(MediaType.APPLICATION_JSON))
@@ -49,7 +51,7 @@ public class BeerControlerTest {
     @Test
     void getBeerByIdNotFound() throws Exception {
         UUID testId = UUID.randomUUID();
-        given(beerService.getBeerById(testId)).willThrow(NotFoundException.class);
+        given(beerService.getBeerById(testId)).willReturn(Optional.empty());
         mockMvc.perform(get("/api/v1/beers/" + testId)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
